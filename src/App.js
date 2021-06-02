@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import ListOfGifs from "./components/ListOfGifs";
+import { Route, Link } from "wouter";
+import "./App.css";
 
 function App() {
+  const [keyword, setKeyword] = useState("Saint Seiya");
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <section className="App-content">
+        <h1>App</h1>
+        <Link to="/gif/panda">Gifs de Pandas</Link>
+        <Link to="/gif/rick">Gifs de Rick</Link>
+        <Link to="/gif/trigun">Gifs de Trigun</Link>
+        <Route path="/gif/:keyword" component={ListOfGifs} />
+        <button
+          className="btn-change-gifs"
+          onClick={() => setKeyword("Seint Seiya")}
         >
-          Learn React
-        </a>
-      </header>
+          CAMBIAR GIFS
+        </button>
+      </section>
     </div>
   );
 }

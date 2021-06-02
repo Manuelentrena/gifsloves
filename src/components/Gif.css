@@ -1,0 +1,25 @@
+.card {
+  background-color: rgb(74, 77, 72);
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 1rem 4rem;
+  max-width: 20rem;
+  border-radius: 10px;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.card__body {
+  margin: 1rem;
+  color: white;
+}
+
+.card__title {
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+
+.card__img {
+  min-height: 20rem;
+  object-fit: cover;
+}
