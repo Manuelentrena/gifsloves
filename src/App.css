@@ -3,7 +3,7 @@
 }
 
 .App-content {
-  background-color: #282c34;
+  background-color: var(--principal);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -19,6 +19,6 @@
   height: 4rem;
   font-size: 2rem;
   font-weight: bold;
-  background-color: aliceblue;
+  background-color: var(--texto);
   color: #282c34;
 }

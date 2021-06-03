@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Gif from "./Gif";
-import getGifts from "../services/getGifts";
+import ListOfGifs from "../../components/ListOfGifs";
+import getGifts from "../../services/getGifts";
 
-const ListOfGifs = ({ params }) => {
-  console.log(params);
+const SearchResults = ({ params }) => {
   const { keyword } = params;
   /* Estado de los gifs */
   const [gifs, setGifs] = useState([]);
@@ -14,10 +13,9 @@ const ListOfGifs = ({ params }) => {
   /* Renderizamos los gifs */
   return (
     <>
-      {gifs.map((gif) => (
-        <Gif {...gif} key={gif.id} />
-      ))}
+      <ListOfGifs gifs={gifs} />
     </>
   );
 };
-export default ListOfGifs;
+
+export default SearchResults;
