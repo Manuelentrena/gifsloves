@@ -8,7 +8,7 @@ const Gif = ({ id, title, url }) => {
       <div className="card__body">
         <h4 className="card__title">{title ? title : "Not Found"}</h4>
       </div>
-      <img className="card__img" src={url} alt={title} />
+      <img loading="lazy" className="card__img" src={url} alt={title} />
     </Link>
   );
 };

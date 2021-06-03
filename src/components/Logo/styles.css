@@ -1,0 +1,20 @@
+.logo {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.mymove {
+  animation: mymove 10s infinite;
+}
+
+@keyframes mymove {
+  0% {
+    fill: var(--secundario);
+  }
+  50% {
+    fill: var(--texto);
+  }
+  100% {
+    fill: var(--secundario);
+  }
+}
