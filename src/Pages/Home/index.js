@@ -1,6 +1,6 @@
-import ListOfGifs from "../../components/ListOfGifs";
-import Spinner from "../../components/Spinner";
-import { useGifs } from "../../hooks/useGifs";
+import ListOfGifs from "components/ListOfGifs";
+import Spinner from "components/Spinner";
+import { useGifs } from "hooks/useGifs";
 import "./styles.css";
 
 const Home = () => {

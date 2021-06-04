@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import Logo from "../Logo";
+import Logo from "components/Logo";
 import { useLocation } from "wouter";
 import "./styles.css";
 

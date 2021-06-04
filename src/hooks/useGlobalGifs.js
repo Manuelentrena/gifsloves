@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import GifsContext from "../Provider/GifsContext";
+import GifsContext from "Provider/GifsContext";
 
 const useGlobalGifs = () => {
   return useContext(GifsContext).gifs;
