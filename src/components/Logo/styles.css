@@ -1,3 +1,9 @@
+.container__logo {
+  cursor: pointer;
+  width: fit-content;
+  margin: 0 auto;
+}
+
 .logo {
   margin-top: 2rem;
   margin-bottom: 2rem;

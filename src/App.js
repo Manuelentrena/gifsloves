@@ -2,11 +2,14 @@ import React from "react";
 import Home from "./Pages/Home/index";
 import SearchResults from "./Pages/SearchResults/index";
 import Detail from "./Pages/Detail/index";
-import { Route, Link } from "wouter";
-import Logo from "./components/Logo";
+import { Route } from "wouter";
+import Header from "./components/Header";
+import Category from "./components/Category";
 import StaticContext from "./Provider/StaticContext";
 import { GifsContextProvider } from "./Provider/GifsContext";
 import "./App.css";
+
+const POPULAR_GIFS = ["Matrix", "Goku", "Berserk", "Rick"];
 
 function App() {
   return (
@@ -17,15 +20,16 @@ function App() {
       }}
     >
       <div className="App">
+        <Header />
         <section className="App-content">
-          <Link to="/">
-            <Logo />
-          </Link>
           <GifsContextProvider>
             <Route path="/" component={Home} />
             <Route path="/search/:keyword" component={SearchResults} />
             <Route path="/gif/:id" component={Detail} />
           </GifsContextProvider>
+          <aside>
+            <Category name="Tendencias" options={POPULAR_GIFS} />
+          </aside>
         </section>
       </div>
     </StaticContext.Provider>

@@ -1,24 +1,23 @@
 .App {
   text-align: center;
-}
-
-.App-content {
   background-color: var(--principal);
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
   padding: 2rem;
 }
 
-.btn-change-gifs {
-  width: fit-content;
-  margin-top: 2rem;
-  height: 4rem;
-  font-size: 2rem;
-  font-weight: bold;
-  background-color: var(--texto);
-  color: #282c34;
+.App-content {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .App-content {
+    flex-direction: column;
+  }
+}
+
+/* Cada pagina */
+.Page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }

@@ -13,23 +13,18 @@
     column-count: 2;
   }
 }
-@media (min-width: 600px) {
+@media (min-width: 900px) {
   .grid {
     column-count: 3;
   }
 }
-@media (min-width: 800px) {
+@media (min-width: 1200px) {
   .grid {
     column-count: 4;
   }
 }
-@media (min-width: 1200px) {
-  .grid {
-    column-count: 5;
-  }
-}
 @media (min-width: 1500px) {
   .grid {
-    column-count: 6;
+    column-count: 5;
   }
 }

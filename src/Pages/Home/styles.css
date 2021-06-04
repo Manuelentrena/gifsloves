@@ -1,6 +1,7 @@
-.home {
-  color: var(--texto);
-  font-size: 1.5rem;
+.home__title {
+  color: var(--secundario);
+  font-size: 2rem;
+  text-align: left;
 }
 
 .home__link {

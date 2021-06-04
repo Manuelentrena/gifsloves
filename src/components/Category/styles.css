@@ -1,0 +1,28 @@
+.Category {
+  width: 100%;
+}
+.Category__title {
+  color: var(--secundario);
+  font-size: 2rem;
+}
+.Category__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.Category__link {
+  text-decoration: none;
+  color: var(--texto);
+  font-size: 1.8rem;
+}
+
+.Category__link:hover {
+  color: var(--secundario);
+}
+
+@media (min-width: 768px) {
+  .Category {
+    margin-left: 1rem;
+    min-width: 250px;
+  }
+}
