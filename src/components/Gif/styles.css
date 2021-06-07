@@ -1,6 +1,6 @@
 .card {
-  -webkit-comun-break-inside: avoid;
-  page-break-inside: avoid;
+  /* -webkit-comun-break-inside: avoid;
+  page-break-inside: avoid; */
   background-color: var(--secundario);
   display: flex;
   flex-direction: column-reverse;
