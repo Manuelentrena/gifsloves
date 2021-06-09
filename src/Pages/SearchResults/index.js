@@ -5,6 +5,7 @@ import { useGifs } from "hooks/useGifs";
 import useNearScreen from "hooks/useNearScreen";
 import debounce from "just-debounce-it";
 import "./styles.css";
+import useSEO from "hooks/useSEO";
 
 const SearchResults = ({ params }) => {
   const { keyword } = params;
@@ -14,6 +15,9 @@ const SearchResults = ({ params }) => {
     externalRef: loading ? null : externalRef,
     once: false,
   });
+
+  const title = gifs ? `${keyword} GIFs` : "";
+  useSEO({ title });
 
   const debounceHandleNextPage = useCallback(
     debounce(() => setPage((prevPage) => prevPage + 1), 500),

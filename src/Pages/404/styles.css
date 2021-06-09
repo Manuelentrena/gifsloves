@@ -1,0 +1,54 @@
+.error {
+  width: 100%;
+}
+
+.error__title {
+  color: var(--texto);
+  font-size: 2rem;
+}
+
+.error_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.error__char {
+  font-size: 4rem;
+}
+
+.e {
+  margin-left: 2rem;
+}
+
+.e,
+.o,
+.r,
+.R {
+  animation: error 3s infinite step-end;
+}
+
+.cuatro {
+  color: rgba(0, 255, 255, 1);
+}
+
+.cero {
+  color: rgba(255, 0, 221, 1);
+}
+
+.cuatro__dos {
+  color: rgba(21, 255, 0, 1);
+}
+
+@keyframes error {
+  0% {
+    color: var(--texto);
+  }
+  50% {
+    color: rgba(255, 94, 0, 1);
+  }
+  100% {
+    color: var(--texto);
+  }
+}

@@ -1,10 +1,10 @@
 :root {
-  --principal: #545454;
+  --principal: #313131;
   --secundario: #dcd754;
   --texto: #fbfbfb;
-  --secundario-opacity: rgba(220, 215, 84, 0.5);
+  --secundario-opacity: rgba(220, 215, 84, 0.8);
   /* --principal-opacity: rgba(84, 84, 84, 0.85); */
-  --principal-opacity: rgba(102, 102, 83, 0.85);
+  --principal-opacity: rgba(102, 102, 83, 0.5);
   /* amarillo rgb(220,215,84)
     negro rbg(84,84,84)
      blanco rbg(251,251,251)

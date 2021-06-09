@@ -8,7 +8,7 @@ const Categoty = ({ name, options = [] }) => {
       <h2 className="Category__title">{name}</h2>
       <ul className="Category__list">
         {options.map((singleOption) => (
-          <li key={singleOption}>
+          <li className="Category__item" key={singleOption}>
             <Link className="Category__link" to={`/search/${singleOption}`}>
               {singleOption}
             </Link>
