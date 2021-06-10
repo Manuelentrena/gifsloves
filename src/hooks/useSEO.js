@@ -1,3 +1,5 @@
+/* HOOK que se implemento para ver como realizar SEO a mano pero al final se uso React-Helmet */
+
 import { useEffect, useRef } from "react";
 
 const useSEO = ({ title, description }) => {
