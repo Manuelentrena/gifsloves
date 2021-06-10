@@ -36,6 +36,10 @@ const SearchResults = ({ params }) => {
         ) : (
           <>
             <Helmet>
+              <link
+                rel="canonical"
+                href={`https://gifsloves.vercel.app/search/${keyword}`}
+              />
               <title>{decodeURI(title)} | GifsLoves</title>
               <meta
                 name="description"

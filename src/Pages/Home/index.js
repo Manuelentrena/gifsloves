@@ -11,6 +11,7 @@ const Home = () => {
   return (
     <>
       <Helmet>
+        <link rel="canonical" href="https://gifsloves.vercel.app/" />
         <title>Home GIFs | GifsLoves</title>
         <meta
           name="description"

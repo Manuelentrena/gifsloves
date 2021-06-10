@@ -27,6 +27,7 @@ const Detail = ({ params }) => {
   return (
     <>
       <Helmet>
+        <link rel="canonical" href={`https://gifsloves.vercel.app/gif/${id}`} />
         <title>{decodeURI(title) + " | GifsLoves"}</title>
         <meta
           name="description"
