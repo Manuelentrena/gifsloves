@@ -5,7 +5,7 @@ import { useGifs } from "hooks/useGifs";
 import useNearScreen from "hooks/useNearScreen";
 import debounce from "just-debounce-it";
 import "./styles.css";
-import useSEO from "hooks/useSEO";
+import { Helmet } from "react-helmet";
 
 const SearchResults = ({ params }) => {
   const { keyword } = params;
@@ -17,7 +17,6 @@ const SearchResults = ({ params }) => {
   });
 
   const title = gifs ? `${keyword} GIFs` : "";
-  useSEO({ title });
 
   const debounceHandleNextPage = useCallback(
     debounce(() => setPage((prevPage) => prevPage + 1), 500),
@@ -29,20 +28,26 @@ const SearchResults = ({ params }) => {
   }, [debounceHandleNextPage, isNearScreen]);
 
   return (
-    <div className="Page">
-      <h2 className="Search__title">Gifs de {decodeURI(keyword)}</h2>
-      {loading ? (
-        <Spinner />
-      ) : (
-        <>
-          <ListOfGifs gifs={gifs} />
-          <div id="visor" ref={externalRef}></div>
-        </>
-      )}
-      {/* <button className="Search_button" type="button" onClick={handleNextPage}>
-        MORE GIFS
-      </button> */}
-    </div>
+    <>
+      <div className="Page">
+        <h2 className="Search__title">Gifs de {decodeURI(keyword)}</h2>
+        {loading ? (
+          <Spinner />
+        ) : (
+          <>
+            <Helmet>
+              <title>{decodeURI(title)} | GifsLoves</title>
+              <meta
+                name="description"
+                content={`Lista de Gifs sobre ${decodeURI(title)}`}
+              ></meta>
+            </Helmet>
+            <ListOfGifs gifs={gifs} />
+            <div id="visor" ref={externalRef}></div>
+          </>
+        )}
+      </div>
+    </>
   );
 };
 
