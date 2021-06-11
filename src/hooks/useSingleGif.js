@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
-import { useGifs } from "hooks/useGifs";
+import { useEffect, useState, useContext } from "react";
 import getSingleGif from "services/getSingleGif";
+import GifsContext from "Provider/GifsContext";
 
 const useSingleGif = ({ id }) => {
-  const { gifs } = useGifs();
+  const { gifs } = useContext(GifsContext);
   const gifFromCache = gifs.find((singleGif) => singleGif.id === id);
 
   const [gif, setGif] = useState(gifFromCache);
@@ -21,7 +21,7 @@ const useSingleGif = ({ id }) => {
           setIsError(false);
         })
         .catch((err) => {
-          console.log(err);
+          console.error(err);
           setIsLoading(false);
           setIsError(true);
         });

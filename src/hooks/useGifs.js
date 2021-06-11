@@ -4,7 +4,7 @@ import GifsContext from "Provider/GifsContext";
 
 const INITIAL_PAGE = 0;
 
-export const useGifs = (keyword) => {
+export const useGifs = (keyword, rating) => {
   /* Estado de los gifs */
   const { gifs, setGifs } = useContext(GifsContext);
   const [page, setPage] = useState(INITIAL_PAGE);
@@ -13,24 +13,34 @@ export const useGifs = (keyword) => {
 
   const keywordToUse =
     keyword ?? localStorage.getItem("lastKeyword") ?? "gatitos";
+
+  const ratingToUse = rating ?? localStorage.getItem("lastRating") ?? "g";
   /* Buscamos los bifs en la API */
   useEffect(() => {
-    setLoading(true);
-    getGifts(keywordToUse).then((data) => {
-      setGifs(data);
-      setLoading(false);
-      localStorage.setItem("lastKeyword", keywordToUse);
-    });
-  }, [keyword, keywordToUse, setGifs]);
+    if (
+      keywordToUse !== localStorage.getItem("lastKeyword") ||
+      ratingToUse !== localStorage.getItem("lastRating") ||
+      Object.keys(gifs).length === 0 ||
+      loading !== false
+    ) {
+      setLoading(true);
+      getGifts(keywordToUse, ratingToUse).then((data) => {
+        setGifs(data);
+        setLoading(false);
+        localStorage.setItem("lastKeyword", keywordToUse);
+        localStorage.setItem("lastRating", ratingToUse);
+      });
+    }
+  }, [keyword, keywordToUse, ratingToUse, setGifs]);
 
   useEffect(() => {
     if (page === INITIAL_PAGE) return;
     setLoadingNextPage(true);
-    getGifts(keywordToUse, page).then((nextGifs) => {
+    getGifts(keywordToUse, ratingToUse, page).then((nextGifs) => {
       setGifs((prevGifs) => prevGifs.concat(nextGifs));
       setLoadingNextPage(false);
     });
-  }, [page, keywordToUse, setGifs]);
+  }, [page, keywordToUse, setGifs, ratingToUse]);
 
   return { loading, loadingNextPage, gifs, setPage };
 };

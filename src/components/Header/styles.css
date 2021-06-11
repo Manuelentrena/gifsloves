@@ -41,3 +41,11 @@
 .header__button:hover .header__input {
   background-color: var(--secundario-opacity);
 }
+
+.header__filter {
+  background-color: aqua;
+}
+
+.header__counter {
+  color: var(--texto);
+}

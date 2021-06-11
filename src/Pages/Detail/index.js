@@ -8,10 +8,11 @@ import { Helmet } from "react-helmet";
 
 const Detail = ({ params }) => {
   const { id } = params;
+
   const { gif, isLoading, isError } = useSingleGif({ id });
+
   const title = gif ? gif.title : "Gif Not Found";
   if (isLoading) {
-    console.log("aqui en loading...");
     return (
       <>
         <Helmet>
@@ -23,7 +24,6 @@ const Detail = ({ params }) => {
   }
   if (isError) return <Redirect to="/404" />;
   if (!gif) return null;
-  console.log(title);
   return (
     <>
       <Helmet>

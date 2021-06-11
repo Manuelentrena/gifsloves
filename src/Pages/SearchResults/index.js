@@ -8,19 +8,19 @@ import "./styles.css";
 import { Helmet } from "react-helmet";
 
 const SearchResults = ({ params }) => {
-  const { keyword } = params;
-  const { loading, setPage, gifs } = useGifs(keyword);
+  const { keyword, rating = "g" } = params;
+  const { loading, setPage, gifs } = useGifs(keyword, rating);
   const externalRef = useRef(null);
   const { isNearScreen } = useNearScreen({
     externalRef: loading ? null : externalRef,
     once: false,
   });
 
-  const title = gifs ? `${keyword} GIFs` : "";
+  const title = gifs ? `${gifs.length} resultados de ${keyword}` : "";
 
   const debounceHandleNextPage = useCallback(
     debounce(() => setPage((prevPage) => prevPage + 1), 500),
-    []
+    [setPage]
   );
 
   useEffect(() => {
@@ -40,7 +40,7 @@ const SearchResults = ({ params }) => {
                 rel="canonical"
                 href={`https://gifsloves.vercel.app/search/${keyword}`}
               />
-              <title>{decodeURI(title)} | GifsLoves</title>
+              <title>{decodeURI(title)}</title>
               <meta
                 name="description"
                 content={`Lista de Gifs sobre ${decodeURI(title)}`}

@@ -11,14 +11,16 @@ import "./App.css";
 const Homepage = React.lazy(() => import("./Pages/Home"));
 
 function App() {
+  /*   const [location] = useLocation(); */
+
   return (
     <div className="App">
-      <Header />
+      <Header /* location={location} */ />
       <Suspense fallback={null}>
         <section className="App-content">
           <GifsContextProvider>
             <Route path="/" component={Homepage} />
-            <Route path="/search/:keyword" component={SearchResults} />
+            <Route path="/search/:keyword/:rating?" component={SearchResults} />
             <Route path="/gif/:id" component={Detail} />
             <Route path="/404" component={Error} />
           </GifsContextProvider>
