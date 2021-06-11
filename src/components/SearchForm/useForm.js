@@ -2,7 +2,9 @@ import { useReducer, useCallback } from "react";
 
 const ACTIONS = {
   UPDATE_KEYWORD: "update_keyword",
-  UPDATE_RATING: "rating_keyword",
+  UPDATE_RATING: "update_rating",
+  UPDATE_LANGUAGE: "update_language",
+  RESET: "reset",
 };
 
 const reducer = (state, action) => {
@@ -11,20 +13,29 @@ const reducer = (state, action) => {
       return { ...state, keyword: action.payload, times: state.times + 1 };
     case ACTIONS.UPDATE_RATING:
       return { ...state, rating: action.payload, times: state.times + 1 };
+    case ACTIONS.UPDATE_LANGUAGE:
+      return { ...state, language: action.payload, times: state.times + 1 };
+    case ACTIONS.RESET:
+      return { keyword: "", rating: "g", language: "es", times: 0 };
     default:
       return state;
   }
 };
 
-export default function useForm({ lastKeyword, lastRating }) {
+export default function useForm({
+  inicialKeyword,
+  inicialRating,
+  inicialLanguage,
+}) {
   //usereducer
   const [state, dispatch] = useReducer(reducer, {
-    keyword: lastKeyword,
-    rating: lastRating,
+    keyword: inicialKeyword,
+    rating: inicialRating,
+    language: inicialLanguage,
     times: 0,
   });
 
-  const { keyword, rating, times } = state;
+  const { keyword, rating, times, language } = state;
 
   const updateKeyword = useCallback(
     (keyword) => {
@@ -46,11 +57,30 @@ export default function useForm({ lastKeyword, lastRating }) {
     [dispatch]
   );
 
+  const updateLanguage = useCallback(
+    (language) => {
+      dispatch({
+        type: ACTIONS.UPDATE_LANGUAGE,
+        payload: language,
+      });
+    },
+    [dispatch]
+  );
+
+  const reset = useCallback(() => {
+    dispatch({
+      type: ACTIONS.RESET,
+    });
+  }, [dispatch]);
+
   return {
     keyword,
     rating,
     times,
+    language,
     updateKeyword,
     updateRating,
+    updateLanguage,
+    reset,
   };
 }

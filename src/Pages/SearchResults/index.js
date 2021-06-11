@@ -8,8 +8,8 @@ import "./styles.css";
 import { Helmet } from "react-helmet";
 
 const SearchResults = ({ params }) => {
-  const { keyword, rating = "g" } = params;
-  const { loading, setPage, gifs } = useGifs(keyword, rating);
+  const { keyword, rating = "g", language } = params;
+  const { loading, setPage, gifs } = useGifs(keyword, rating, language);
   const externalRef = useRef(null);
   const { isNearScreen } = useNearScreen({
     externalRef: loading ? null : externalRef,
