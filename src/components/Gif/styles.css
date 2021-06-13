@@ -1,18 +1,47 @@
 .card {
   display: flex;
   flex-direction: column-reverse;
-  border-radius: 5px;
-  overflow: hidden;
-  text-decoration: none;
   position: relative;
+}
+
+/* Patron aleatorio */
+
+.card:nth-child(8n + 1) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.card:nth-child(11n + 4) {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+/* Ipad */
+@media screen and (max-width: 48em) {
+  .card:nth-child(4n + 1) {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+}
+
+/* Mobil */
+@media screen and (max-width: 32.3em) {
+  .card:nth-child(n) {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}
+
+.card__img {
+  height: inherit;
   width: 100%;
-  margin-bottom: 0.75rem;
+  object-fit: cover;
+  height: 100%;
 }
 
 .card__body {
   margin: 0;
   position: absolute;
-  border-top-right-radius: 5px;
   background-color: var(--principal-opacity);
 }
 
@@ -37,13 +66,6 @@
   font-size: 0.6em;
   color: var(--texto);
   text-align: left;
-}
-
-.card__img {
-  object-fit: cover;
-  height: 100%;
-  min-height: 10rem;
-  width: 100%;
 }
 
 .card:nth-child(4n + 1):hover {

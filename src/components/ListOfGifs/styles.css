@@ -1,15 +1,14 @@
 :root {
-  --gridList-column: 250px;
-  --gridList-rows: 250px;
-  --gridList-gap: 6px;
+  --column: 220px;
+  --rows: 280px;
+  --gap: 12px;
 }
 
 .grid {
-  margin-top: 2em;
   display: grid;
-  gap: var(--gridList-gap, 6px);
-  grid-template-columns: repeat(auto-fit, minmax(var(--gridList-column), 1fr));
-  grid-auto-rows: var(--gridList-rows);
-  width: 100%;
-  min-height: 70vh;
+  min-height: 100vh;
+  grid-template-columns: repeat(auto-fit, minmax(var(--column), 1fr));
+  grid-auto-rows: var(--rows);
+  grid-auto-flow: dense;
+  gap: var(--gap);
 }

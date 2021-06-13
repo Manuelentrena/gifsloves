@@ -47,7 +47,7 @@
   background-color: rgb(255, 94, 0);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .Category {
     margin-left: 1rem;
     min-width: 250px;
