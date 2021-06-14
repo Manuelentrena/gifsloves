@@ -19,6 +19,7 @@ export const useGifs = (keyword, rating, language) => {
 
   const languageToUse =
     language ?? localStorage.getItem("lastLanguage") ?? "es";
+
   useEffect(() => {
     if (
       keywordToUse !== localStorage.getItem("lastKeyword") ||

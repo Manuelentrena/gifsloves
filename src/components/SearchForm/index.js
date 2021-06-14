@@ -7,7 +7,7 @@ const LANGUAGES = ["es", "en"];
 
 const SearchForm = () => {
   /* Miramos la ruta y extraemos los parametros */
-  const [_, setLocation] = useLocation();
+  const [, setLocation] = useLocation();
 
   const {
     keyword,
@@ -69,7 +69,7 @@ const SearchForm = () => {
 
         <small className="header__counter">{times}</small>
       </div>
-      <button type="reset" className="header__reset" onClick={reset}>
+      <button id="reset" type="reset" className="header__reset" onClick={reset}>
         Reset
       </button>
     </form>

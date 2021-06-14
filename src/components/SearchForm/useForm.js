@@ -23,10 +23,10 @@ const reducer = (state, action) => {
 };
 
 export default function useForm({
-  inicialKeyword,
-  inicialRating,
-  inicialLanguage,
-}) {
+  inicialKeyword = "",
+  inicialRating = "g",
+  inicialLanguage = "es",
+} = {}) {
   //usereducer
   const [state, dispatch] = useReducer(reducer, {
     keyword: inicialKeyword,

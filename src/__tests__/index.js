@@ -1,7 +1,7 @@
 import {
   fireEvent,
   render,
-  waitForElement,
+  /* waitForElement, */
   screen,
 } from "@testing-library/react";
 import App from "../App";
@@ -20,7 +20,7 @@ test("home work as expected", async () => {
   expect(card).toBeVisible(true);
 }); */
 
-test("search form cuold be used", async () => {
+/* test("search form cuold be used", async () => {
   const { findByText } = render(<App />);
   const input = await screen.findByRole("textbox");
   const button = await screen.findByRole("button");
@@ -29,4 +29,4 @@ test("search form cuold be used", async () => {
 
   const title = await findByText(/Gifs de Matrix/i);
   expect(title).toBeInTheDocument();
-});
+}); */
