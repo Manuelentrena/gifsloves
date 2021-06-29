@@ -1,0 +1,15 @@
+.login__container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.login__button {
+  color: var(--texto);
+  background-color: transparent;
+  border-left-color: aqua;
+  border-right-color: rgb(255, 0, 221);
+  border-top-color: rgb(21, 255, 0);
+  border-bottom-color: rgb(255, 94, 0);
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+}

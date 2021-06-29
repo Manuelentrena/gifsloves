@@ -1,7 +1,8 @@
 .card {
-  display: flex;
-  flex-direction: column-reverse;
+  /* display: flex; */
+  /* flex-direction: column-reverse; */
   position: relative;
+  cursor: pointer;
 }
 
 /* Patron aleatorio */
@@ -33,16 +34,19 @@
 }
 
 .card__img {
-  height: inherit;
+  /* height: inherit; */
   width: 100%;
   object-fit: cover;
   height: 100%;
 }
 
 .card__body {
-  margin: 0;
+  /* margin: 0; */
   position: absolute;
-  background-color: var(--principal-opacity);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 .card:nth-child(4n + 1) {
@@ -62,10 +66,21 @@
 }
 
 .card__title {
-  margin: 0.5rem 1rem 0.5rem 1rem;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  padding: 0.5rem 1rem 0.5rem 1rem;
   font-size: 0.6em;
   color: var(--texto);
   text-align: left;
+  background-color: var(--principal-opacity);
+}
+
+.card__button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
 }
 
 .card:nth-child(4n + 1):hover {
@@ -84,18 +99,18 @@
   border: 5px solid rgb(255, 94, 0);
 }
 
-.card:nth-child(4n + 1):hover > div {
+.card:nth-child(4n + 1):hover .card__title {
   background-color: rgba(0, 255, 255, 0.5);
 }
 
-.card:nth-child(4n + 2):hover > div {
+.card:nth-child(4n + 2):hover .card__title {
   background-color: rgba(255, 0, 221, 0.5);
 }
 
-.card:nth-child(4n + 3):hover > div {
+.card:nth-child(4n + 3):hover .card__title {
   background-color: rgba(21, 255, 0, 0.5);
 }
 
-.card:nth-child(4n + 4):hover > div {
+.card:nth-child(4n + 4):hover .card__title {
   background-color: rgba(255, 94, 0, 0.5);
 }

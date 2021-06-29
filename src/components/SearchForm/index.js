@@ -7,7 +7,7 @@ const LANGUAGES = ["es", "en"];
 
 const SearchForm = () => {
   /* Miramos la ruta y extraemos los parametros */
-  const [, setLocation] = useLocation();
+  const [location, setLocation] = useLocation();
 
   const {
     keyword,
@@ -29,7 +29,7 @@ const SearchForm = () => {
     setLocation(`/search/${keyword}/${rating}/${language}`);
   };
 
-  return (
+  return location !== "/login" && location !== "/register" ? (
     <form className="header__form" onSubmit={handleSubmit}>
       <div className="header__options">
         <input
@@ -73,7 +73,7 @@ const SearchForm = () => {
         Reset
       </button>
     </form>
-  );
+  ) : null;
 };
 
 export default React.memo(SearchForm);

@@ -1,0 +1,16 @@
+.fav {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0.2rem;
+  background-color: rgba(247, 171, 171, 0.3);
+  border: none;
+  transition: all 0.3s ease;
+  z-index: 0;
+}
+
+.fav:hover {
+  background-color: rgba(233, 113, 113, 0.7);
+}
