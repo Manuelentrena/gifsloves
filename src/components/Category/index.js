@@ -3,8 +3,6 @@ import { Link } from "wouter";
 import "./styles.css";
 
 const Categoty = ({ name, options = [] }) => {
-  console.log("ESTOY EN CATEGORI");
-  console.log(options);
   return (
     <div className="Category">
       <h2 className="Category__title">{name}</h2>

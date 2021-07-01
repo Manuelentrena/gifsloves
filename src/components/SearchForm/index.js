@@ -64,13 +64,13 @@ const SearchForm = () => {
           ))}
         </select>
         <button className="header__button" type="submit">
-          BUSCAR
+          SEARCH
         </button>
 
         <small className="header__counter">{times}</small>
       </div>
       <button id="reset" type="reset" className="header__reset" onClick={reset}>
-        Reset
+        RESET
       </button>
     </form>
   ) : null;

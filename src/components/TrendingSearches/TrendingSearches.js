@@ -9,5 +9,5 @@ export default function TrendingSearches() {
     getTrends().then((res) => setTrends(res));
   }, []);
 
-  return <Category name="Tendencias" options={trends} />;
+  return <Category name="Trendings" options={trends} />;
 }

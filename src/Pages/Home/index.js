@@ -19,7 +19,7 @@ const Home = () => {
         />
       </Helmet>
       <div className="Page">
-        <h2 className="home__title">Ultimós Gifs Buscados</h2>
+        <h2 className="home__title">Last searched gifs</h2>
         {loading ? <Spinner /> : <ListOfGifs gifs={gifs} />}
       </div>
     </>

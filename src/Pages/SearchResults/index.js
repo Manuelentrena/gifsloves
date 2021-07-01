@@ -30,7 +30,11 @@ const SearchResults = ({ params }) => {
   return (
     <>
       <div className="Page">
-        <h2 className="Search__title">Gifs de {decodeURI(keyword)}</h2>
+        <h2 className="Search__title">
+          {decodeURI(keyword).charAt(0).toUpperCase() +
+            decodeURI(keyword).slice(1)}{" "}
+          gifs
+        </h2>
         {loading ? (
           <Spinner />
         ) : (

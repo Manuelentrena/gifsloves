@@ -8,7 +8,7 @@ import App from "../App";
 
 test("home work as expected", async () => {
   const { findByText } = render(<App />);
-  const title = await findByText(/Ultimós Gifs Buscados/i);
+  const title = await findByText(/Last searched gifs/i);
   expect(title).toBeInTheDocument();
 });
 

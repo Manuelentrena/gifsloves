@@ -19,17 +19,6 @@ const Gif = ({ id, title, url }) => {
   );
 };
 
-/* const Gif = ({ id, title, url }) => {
-  return (
-    <Link to={`/gif/${id}`} className="card">
-      <div className="card__body">
-        <h4 className="card__title">{title ? title : "Not Found"}</h4>
-      </div>
-      <img loading="lazy" className="card__img" src={url} alt={title} />
-    </Link>
-  );
-}; */
-
 export default React.memo(Gif, (prevProps, nextProps) => {
   return prevProps.id === nextProps.id;
 });

@@ -23,6 +23,10 @@ const Fav = ({ id }) => {
     setShowModal(false);
   }, [setShowModal]);
 
+  const handleLogin = useCallback(() => {
+    setShowModal(false);
+  }, [setShowModal]);
+
   const [label, emoji] = isFaved ? ["Remove Gif", "💗"] : ["Add Gif", "🤍"];
 
   return (
@@ -35,7 +39,7 @@ const Fav = ({ id }) => {
       {showModal && (
         <ModalPortal onClose={handleClose}>
           <Logo />
-          <Login />
+          <Login onLogin={handleLogin} />
         </ModalPortal>
       )}
     </>

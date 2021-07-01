@@ -4,11 +4,13 @@ import { Route, Switch } from "wouter";
 import SearchResults from "Pages/SearchResults/index";
 import Detail from "Pages/Detail/index";
 import Error from "Pages/404/index";
+import Login from "Pages/Login";
+import Register from "Pages/Register";
 
 import Header from "components/Header";
 import ButtonLogin from "components/ButtonLogin";
 import LazyTrending from "components/TrendingSearches";
-import Login from "Pages/Login";
+import UpButton from "components/Up";
 
 import { GifsContextProvider } from "Provider/GifsContext";
 import { UserContextProvider } from "Provider/UserContext";
@@ -35,6 +37,7 @@ function App() {
                 />
                 <Route path="/gif/:id" component={Detail} />
                 <Route path="/login" component={Login} />
+                <Route path="/register" component={Register} />
                 <Route path="/:rest*" component={Error} />
               </Switch>
             </GifsContextProvider>
@@ -43,6 +46,7 @@ function App() {
             </aside>
           </section>
         </Suspense>
+        <UpButton />
       </div>
     </UserContextProvider>
   );
