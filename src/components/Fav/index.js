@@ -27,7 +27,7 @@ const Fav = ({ id }) => {
     setShowModal(false);
   }, [setShowModal]);
 
-  const [label, emoji] = isFaved ? ["Remove Gif", "💗"] : ["Add Gif", "🖤"];
+  const [label, emoji] = isFaved ? ["Remove Gif", "💗"] : ["Add Gif", "🤍"];
 
   return (
     <>
