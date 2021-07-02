@@ -4,11 +4,13 @@
   right: 8px;
   border-radius: 50%;
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 0.6rem;
   background-color: rgba(247, 171, 171, 0.3);
   border: none;
   transition: all 0.3s ease;
   z-index: 0;
+  display: grid;
+  place-items: center;
 }
 
 .fav:hover {
