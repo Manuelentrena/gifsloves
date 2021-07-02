@@ -23,7 +23,7 @@ function ButtonLogin() {
   };
 
   const handleClickRegister = () => {
-    isLogin ? logout() : setLocation(`/register`);
+    isLogin || setLocation(`/register`);
   };
 
   const [textRegister, textLogin, classLogin] = isLogin

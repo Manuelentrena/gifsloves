@@ -12,7 +12,6 @@ const SearchForm = () => {
   const {
     keyword,
     rating,
-    times,
     language,
     updateKeyword,
     updateRating,
@@ -41,6 +40,12 @@ const SearchForm = () => {
             updateKeyword(e.target.value);
           }}
         />
+
+        <button className="header__button" type="submit">
+          SEARCH
+        </button>
+      </div>
+      <div className="header__filterContainer">
         <select
           className="header__filter"
           value={rating}
@@ -63,15 +68,15 @@ const SearchForm = () => {
             <option key={language}>{language}</option>
           ))}
         </select>
-        <button className="header__button" type="submit">
-          SEARCH
+        <button
+          id="reset"
+          type="reset"
+          className="header__reset"
+          onClick={reset}
+        >
+          RESET
         </button>
-
-        <small className="header__counter">{times}</small>
       </div>
-      <button id="reset" type="reset" className="header__reset" onClick={reset}>
-        RESET
-      </button>
     </form>
   ) : null;
 };

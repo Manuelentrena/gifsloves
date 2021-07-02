@@ -32,7 +32,7 @@ const Fav = ({ id }) => {
   return (
     <>
       <button className="fav" onClick={handleClick}>
-        <span role="img" aria-label={label}>
+        <span className="fav__icon" role="img" aria-label={label}>
           {emoji}
         </span>
       </button>

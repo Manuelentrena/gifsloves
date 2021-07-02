@@ -23,8 +23,8 @@
 
 .header__button {
   padding: 0.3rem;
-  font-family: inherit;
-  font-size: 1.6rem;
+  /* font-family: inherit; */
+  font-size: 1.2rem;
   border: 3px solid var(--secundario);
   background-color: var(--secundario);
   color: var(--texto);
@@ -40,11 +40,17 @@
 .header__button:hover .header__input {
   background-color: var(--secundario-opacity);
 }
-
+/*  */
 .header__filter {
   max-width: 40px;
   border: 3px solid var(--secundario);
   border-left: none;
+  color: var(--principal);
+  font-family: inherit;
+  margin-right: 0.3rem;
+  min-width: 3rem;
+  padding: 0.3rem;
+  font-size: 1rem;
 }
 
 .header__counter {
@@ -59,10 +65,16 @@
 .header__reset {
   color: var(--texto);
   background-color: transparent;
-  margin: 0.5rem auto;
   border-left-color: aqua;
   border-right-color: rgb(255, 0, 221);
   border-top-color: rgb(21, 255, 0);
   border-bottom-color: rgb(255, 94, 0);
   cursor: pointer;
+}
+
+.header__filterContainer {
+  max-width: 300px;
+  margin: 0.3rem auto;
+  display: flex;
+  justify-content: flex-end;
 }

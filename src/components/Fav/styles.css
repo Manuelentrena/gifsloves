@@ -4,7 +4,7 @@
   right: 8px;
   border-radius: 50%;
   cursor: pointer;
-  padding: 0.2rem;
+  padding: 0.5rem;
   background-color: rgba(247, 171, 171, 0.3);
   border: none;
   transition: all 0.3s ease;
@@ -13,4 +13,8 @@
 
 .fav:hover {
   background-color: rgba(233, 113, 113, 0.7);
+}
+
+.fav__icon {
+  font-size: 1.5rem;
 }
