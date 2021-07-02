@@ -6,7 +6,7 @@ import Logo from "components/Logo";
 import "./styles.css";
 
 const Fav = ({ id }) => {
-  const { isLogin, addFav, favs } = useUser();
+  const { isLogin, addFav, favs, deleteFav } = useUser();
   const [isFaved, setIsFaved] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
@@ -16,7 +16,7 @@ const Fav = ({ id }) => {
 
   const handleClick = () => {
     if (!isLogin) return setShowModal(true);
-    isFaved ? console.log("borramos de favs") : addFav({ id });
+    isFaved ? deleteFav({ id }) : addFav({ id });
   };
 
   const handleClose = useCallback(() => {

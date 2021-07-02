@@ -1,10 +1,8 @@
-const DOMAIN = "localhost";
-const PROTOCOL = "http";
-const PORT = 3000;
+import { PROTOCOL, DOMAIN } from "./settings";
 const PATH = "login";
 
 export default function loginService({ email, password }) {
-  return fetch(`${PROTOCOL}://${DOMAIN}:${PORT}/${PATH}`, {
+  return fetch(`${PROTOCOL}://${DOMAIN}/${PATH}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

@@ -3,6 +3,7 @@ import UserContext from "Provider/UserContext";
 import registerService from "services/register";
 import loginService from "services/login";
 import addFavService from "services/addFavService";
+import deleteFavService from "services/deleteFav";
 import getUserService from "services/getUser";
 
 const useUser = () => {
@@ -63,7 +64,6 @@ const useUser = () => {
   );
 
   const logout = useCallback(() => {
-    console.log("DENTRO DE LOGOUT");
     window.sessionStorage.removeItem("token");
     setToken(null);
     setFavs([]);
@@ -80,6 +80,17 @@ const useUser = () => {
     [token, setFavs]
   );
 
+  const deleteFav = useCallback(
+    ({ id }) => {
+      deleteFavService({ id, token })
+        .then((listFavs) => {
+          setFavs(listFavs.data.favs);
+        })
+        .catch((error) => console.log(error));
+    },
+    [token, setFavs]
+  );
+
   return {
     isLogin: !!token,
     isLoading: state.loading,
@@ -88,6 +99,7 @@ const useUser = () => {
     register,
     logout,
     addFav,
+    deleteFav,
     favs,
     getUser,
   };

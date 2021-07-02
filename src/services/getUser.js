@@ -1,12 +1,10 @@
-const DOMAIN = "localhost";
-const PROTOCOL = "http";
-const PORT = 3000;
+import { PROTOCOL, DOMAIN } from "./settings";
 const PATH = "login";
 
 export default function getUserService({ token }) {
   const bearer = "Bearer " + token;
 
-  return fetch(`${PROTOCOL}://${DOMAIN}:${PORT}/${PATH}`, {
+  return fetch(`${PROTOCOL}://${DOMAIN}/${PATH}`, {
     method: "GET",
     headers: {
       Authorization: bearer,
@@ -14,7 +12,6 @@ export default function getUserService({ token }) {
   })
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
       return data;
     })
     .catch((error) => {

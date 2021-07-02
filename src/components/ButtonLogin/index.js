@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "wouter";
 import useUser from "hooks/useUser";
 import "./styles.css";
-import { useCallback } from "react";
 
 function ButtonLogin() {
   const { isLogin, logout, getUser } = useUser();
@@ -17,7 +16,7 @@ function ButtonLogin() {
       }
     };
     callAPI();
-  }, [isLogin]);
+  }, [isLogin, getUser]);
 
   const handleClickLogin = () => {
     isLogin ? logout() : setLocation(`/login`);
