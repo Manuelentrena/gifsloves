@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation } from "wouter";
 import useUser from "hooks/useUser";
 import "./styles.css";
-export default function ButtonLogin() {
-  const { isLogin, logout } = useUser();
+import { useCallback } from "react";
+
+function ButtonLogin() {
+  const { isLogin, logout, getUser } = useUser();
   const [location, setLocation] = useLocation();
+  const [userName, SetUserName] = useState(null);
+
+  useEffect(() => {
+    const callAPI = async () => {
+      if (isLogin) {
+        const { username } = await getUser();
+        SetUserName(username);
+      }
+    };
+    callAPI();
+  }, [isLogin]);
 
   const handleClickLogin = () => {
     isLogin ? logout() : setLocation(`/login`);
@@ -15,7 +28,7 @@ export default function ButtonLogin() {
   };
 
   const [textRegister, textLogin, classLogin] = isLogin
-    ? ["BIENVENIDO...", "LOGOUT", "login__register"]
+    ? [`Hola, ${userName}`, "LOGOUT", "login__register"]
     : ["REGISTER", "LOGIN", null];
 
   return location !== "/login" && location !== "/register" ? (
@@ -33,3 +46,5 @@ export default function ButtonLogin() {
     </div>
   ) : null;
 }
+
+export default ButtonLogin;

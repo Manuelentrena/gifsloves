@@ -3,6 +3,7 @@ import UserContext from "Provider/UserContext";
 import registerService from "services/register";
 import loginService from "services/login";
 import addFavService from "services/addFavService";
+import getUserService from "services/getUser";
 
 const useUser = () => {
   /* Provider User */
@@ -31,6 +32,15 @@ const useUser = () => {
     [setToken, setFavs]
   );
 
+  const getUser = useCallback(async () => {
+    const { error, data } = await getUserService({ token });
+    if (error) {
+      return error;
+    } else {
+      return data;
+    }
+  }, [token]);
+
   const register = useCallback(
     async ({ username, email, password }) => {
       setState({ loading: true, error: false });
@@ -53,6 +63,7 @@ const useUser = () => {
   );
 
   const logout = useCallback(() => {
+    console.log("DENTRO DE LOGOUT");
     window.sessionStorage.removeItem("token");
     setToken(null);
     setFavs([]);
@@ -78,6 +89,7 @@ const useUser = () => {
     logout,
     addFav,
     favs,
+    getUser,
   };
 };
 
